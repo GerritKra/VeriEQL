@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools >= 77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "veri-eql"
+version = "0.0.2"
+authors = [
+    { name="Yang He", email="yha244@sfu.ca" },
+    { name="Pinhan Zhao", email="pinhan@umich.edu" },
+    { name="Xinyu Wang", email="xwangsd@umich.edu" },
+    { name="Yuepeng Wang", email="yuepeng@sfu.ca" },
+    { name="Gerrit Krampe", email="gerrit.krampe@uni-muenster.de" }
+]
+description = " equivalence verifier for SQL queries using bounded model checking"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = { text = "CCBY 4" }
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+
+[project.urls]
+Homepage = "https://github.com/GerritKra/VeriEQL"
