@@ -4,23 +4,27 @@ from constants import DIALECT
 from environment import Environment
 
 
-def main(sql1, sql2, schema, ROW_NUM=2, constraints=None, **kwargs):
-    with Environment(**kwargs) as env:
-        for k, v in schema.items():
-            env.create_database(attributes=v, bound_size=ROW_NUM, name=k)
-        env.add_constraints(constraints)
-        env.save_checkpoints()
-        if env._script_writer is not None:
-            env._script_writer.save_checkpoints()
-        result = env.analyze(sql1, sql2, out_file="test/test.py")
-        if env.show_counterexample:
-            print(env.counterexample)
-        if env.traversing_time is not None:
-            print(f"Time cost: {env.traversing_time + env.solving_time:.2f}")
-        if result == True:
-            print("\033[1;32;40m>>> Equivalent! \033[0m")
-        else:
-            print("\033[1;31;40m>>> Non-Equivalent! Found a counterexample! \033[0m")
+class equivalence_checker:
+    def __init__(self):
+        pass
+
+    def evaluate(sql1, sql2, schema, ROW_NUM=2, constraints=None, **kwargs):
+        with Environment(**kwargs) as env:
+            for k, v in schema.items():
+                env.create_database(attributes=v, bound_size=ROW_NUM, name=k)
+            env.add_constraints(constraints)
+            env.save_checkpoints()
+            if env._script_writer is not None:
+                env._script_writer.save_checkpoints()
+            result = env.analyze(sql1, sql2, out_file="test/test.py")
+            if env.show_counterexample:
+                print(env.counterexample)
+            if env.traversing_time is not None:
+                print(f"Time cost: {env.traversing_time + env.solving_time:.2f}")
+            if result == True:
+                print("\033[1;32;40m>>> Equivalent! \033[0m")
+            else:
+                print("\033[1;31;40m>>> Non-Equivalent! Found a counterexample! \033[0m")
 
 
 if __name__ == '__main__':
@@ -49,4 +53,5 @@ if __name__ == '__main__':
     # timer: show time costs
     # show_counterexample: print counterexample?
     config = {'generate_code': True, 'timer': True, 'show_counterexample': True, "dialect": DIALECT.MYSQL}
-    main(sql1, sql2, schema, ROW_NUM=bound_size, constraints=constants, **config)
+    checker = equivalence_checker()
+    checker.evaluate(sql1, sql2, schema, ROW_NUM=bound_size, constraints=constants, **config)
