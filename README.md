@@ -26,7 +26,7 @@ Python 3.10 or later. (Python 3.11 is recommended.)
 pip install -r requirements.txt
 ```
 
-2) **Important**: Replacing z3 python scripts with [files](./z3py_libs) in your environments could save 10%~20% time in formulation.
+2) **Important**: Replacing z3 python scripts with [files](veri_eql/z3py_libs) in your environments could save 10%~20% time in formulation.
 
 If you use conda, please refer to the following commands.
 
@@ -108,7 +108,7 @@ Experimental results on the **ALL** benchmarks.
 |       SPES        |    24169    |                60                |          226           |
 |      HoTTSQL      |    24434    |                21                |           0            |
 
-The results obtained in **03/27/2023** are available [here](experiments/2023_03_27).
+The results obtained in **03/27/2023** are available [here](veri_eql/experiments/2023_03_27).
 
 #### RQ2: Effectiveness at Generating Counterexamples to Facilitate Downstream Tasks
 
@@ -143,8 +143,8 @@ When instantiate the `Environment` class, please
 ### Spurious counterexample checker
 
 1) install MySQL
-2) create MySQL users for parallel checking by [create_mysql_users.py](dbms_checker/create_mysql_users.py)
-3) check counterexamples by [counterexample_checker.py](dbms_checker/counterexample_checker.py)
+2) create MySQL users for parallel checking by [create_mysql_users.py](veri_eql/dbms_checker/create_mysql_users.py)
+3) check counterexamples by [counterexample_checker.py](veri_eql/dbms_checker/counterexample_checker.py)
 
 ## Citation
 
