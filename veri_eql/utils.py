@@ -11,7 +11,7 @@ import uuid
 
 import ujson
 
-from constants import (
+from veri_eql.constants import (
     If,
     Or,
     And,
