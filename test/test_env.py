@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from environment import Environment
+from veri_eql.environment import Environment
 
 
 def main(sql1, sql2, schema, ROW_NUM=2, constraints=None, **kwargs):

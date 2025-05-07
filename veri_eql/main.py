@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from constants import DIALECT
-from environment import Environment
+from veri_eql.constants import DIALECT
+from veri_eql.environment import Environment
 
 
 class equivalence_checker:
