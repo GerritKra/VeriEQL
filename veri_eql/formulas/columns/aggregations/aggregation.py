@@ -5,14 +5,14 @@ from z3 import (
     ArithRef,
 )
 
-from constants import (
+from veri_eql.constants import (
     If,
     Z3_FALSE,
     IntVal,
     Z3_1,
     Z3_0,
 )
-from errors import SyntaxError
+from veri_eql.errors import SyntaxError
 from veri_eql.formulas import register_formula
 from veri_eql.formulas.columns.attribute import FAttribute
 from veri_eql.formulas.columns.base_column import FBaseColumn
@@ -20,7 +20,7 @@ from veri_eql.formulas.expressions.base_expression import FBaseExpression
 from veri_eql.formulas.expressions.digits import FDigits
 from veri_eql.formulas.expressions.expression import FExpression
 from veri_eql.formulas.expressions.expression_tuple import FExpressionTuple
-from utils import __pos_hash__
+from veri_eql.utils import __pos_hash__
 
 CONSTANT_TYPE = int | float | ArithRef
 
