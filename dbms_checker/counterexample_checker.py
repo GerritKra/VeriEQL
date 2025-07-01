@@ -8,7 +8,7 @@ from collections import Counter
 
 import mysql.connector
 import ujson
-import utils
+from verieql import utils
 import yaml
 from tqdm import tqdm
 

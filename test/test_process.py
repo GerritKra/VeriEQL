@@ -3,9 +3,9 @@
 import time
 from multiprocessing import Process, Queue
 
-from constants import STATE
-from environment import Environment
-from errors import *
+from verieql.constants import STATE
+from verieql.environment import Environment
+from verieql.errors import *
 
 
 def run(ROW_NUM=2):
