@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "verieql"
+version = "0.1.0"
+description = ""
+authors = ["Gerrit Krampe"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.12"
+z3-solver = "^4.15.1.0"
+mo-sql-parsing = "8.205.22260"
+ujson = "^5.10.0"
+ordered-set = "^4.1.0"
+lark = "^1.2.2"
+tqdm = "^4.67.1"
+pandas = "^2.3.0"
+pyyaml = "^6.0.2"
+prettytable = "^3.16.0"
+mysql-connector-python = "^9.3.0"
+matplotlib = "^3.10.3"
+sphinx = "^8.2.3"
+sphinx-rtd-theme = "^3.0.2"
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
